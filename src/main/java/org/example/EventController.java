@@ -1,5 +1,7 @@
 package org.example;
 
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ManyToOne;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,7 +40,6 @@ public class EventController {
 
 
     }
-
     @PutMapping("/events/{id}")
     ResponseEntity<Event> updateEvent(@PathVariable Long id, @RequestBody Event newEvent) {
         Optional<Event> event = eventRepository.findById(id);

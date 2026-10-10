@@ -1,2 +1,12 @@
 services:
-  
+    postgres:
+      image: postgres
+      ports:
+      - "5433:5432"
+      environment:
+       POSTGRES_DB: booking_service
+       POSTGRES_USER: postgres
+       POSTGRES_PASSWORD:  tt2281447223
+       volumes:
+         postgres_data:/var/lib/postgresql/data
+
